@@ -21,11 +21,13 @@ function func(event) {
 
 function moveLeft() {
 	var offsets = document.getElementById('ball').getBoundingClientRect();
+	// console.log(offsets.left);
 	ele.style.left = (offsets.left - 10) + "px";
 }
 
 function moveUp() {
 	var offsets = document.getElementById('ball').getBoundingClientRect();
+	// console.log(offsets.top);
 	ele.style.top = (offsets.top - 10) + "px";
 }
 
@@ -120,6 +122,9 @@ window.setInterval(function() {
 	// var offsets = document.getElementById('ball').getBoundingClientRect();
 	// ele.style.top = (offsets.bottom + num1) + "px";
 }, 80);
+
+
+
 
 function autoLeft(num1) {
 	var offsets = document.getElementById('ball').getBoundingClientRect();
