@@ -6,6 +6,9 @@ document.addEventListener('keydown', func);
 
 
 function func(event) {
+	var offsets = document.getElementById('ball').getBoundingClientRect();
+
+	if((offsets.left > 0) && (offsets.right < 1440) && (offsets.top > 0) && (offsets.bottom < 800)) {
 	ev = event.which;
 	switch(ev) {
 		case 37: moveLeft();
@@ -17,6 +20,9 @@ function func(event) {
 		case 40: moveDown();
 				break;
 	}
+	}
+	else 
+		return;
 }
 
 function moveLeft() {
@@ -33,11 +39,13 @@ function moveUp() {
 
 function moveRight() {
 	var offsets = document.getElementById('ball').getBoundingClientRect();
+	console.log(offsets.right);
 	ele.style.left = (offsets.right + 10) + "px";
 }
 
 function moveDown() {
 	var offsets = document.getElementById('ball').getBoundingClientRect();
+	console.log(offsets.bottom);
 	ele.style.top = (offsets.bottom + 10) + "px";
 }
 
@@ -94,6 +102,10 @@ window.setInterval(function() {
 	// num1 = arr[(curr = rand)];
 	// arRL[(funccurr = funcrand)](num1);
 
+	var offsets = document.getElementById('ball').getBoundingClientRect();
+
+	if((offsets.left > 0) && (offsets.right < 1040) && (offsets.top > 0) && (offsets.bottom < 800)) {
+
 	rand = Math.floor(Math.random() * arr.length);
 	funcrand = Math.floor(Math.random() * arRL.length);
 	num1 = arr[rand];
@@ -105,7 +117,12 @@ window.setInterval(function() {
 	rand = Math.floor(Math.random() * arr.length);
 	funcrand2 = Math.floor(Math.random() * arTB.length);
 	num2 = arr[rand];
-	arTB[funcrand2](num2);
+	arTB[funcrand2](num2); 
+
+	}
+
+	else 
+		return;
 
 	// console.log(num2);
 	
